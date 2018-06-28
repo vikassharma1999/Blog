@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from.import forms
-from.models import FeedBack
+from.models import FeedBack,Text
 
 
 # Create your views here.
@@ -9,7 +9,16 @@ def thanks(request,):
 
 	return render(request,'feedback/thanks.html',{'data':data})
 def about(request):
-	return render(request,'feedback/about.html')
+	if(request.method=="POST"):
+		form=forms.TextMe(request.POST,request.FILES)
+		if(form.is_valid):
+			form.save()
+			return redirect('feedback:about')
+	else:
+		form=forms.TextMe()
+	return render(request,'feedback/about.html',{'form':form})
+
+	
 
 
 

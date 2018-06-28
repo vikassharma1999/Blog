@@ -7,6 +7,20 @@
 	<div class="about1">
 		Hello I am Vikas and and i am currently pursuing my bachelors degree in Information Technology at Indian Institute Of Information Technology,Vadodara
 	</div>
-
+	
+		<h1>For More Information You can text me here :-</h1>
+		<form class="site-form" method="POST" action="{% url 'feedback:about'%}">
+			{% csrf_token %}
+			{{form}}
+			<input type="submit" value="Submit">
+		</form>
+	<h1>You can also find me here:-</h1>
+	<ul>
+	<li><a href="https://github.com/vikassharma1999">Github</a></li>
+	<li><a href="https://www.hackerrank.com/VIKAS07">Hackerrank</a></li>
+	<li><a href="https://www.linkedin.com/in/vikas-sharma-04a11a156/">Linkden</a></li>
+	<li><a href="https://www.facebook.com/profile.php?id=100005685854754">Facebook</a></li>
+	<li><a href="https://twitter.com/Vikassh89501557">Twitter</a></li>
+</ul>
 </div>
 {% endblock %}
