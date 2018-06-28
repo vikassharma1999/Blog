@@ -1,12 +1,12 @@
 {% extends 'base_layout.html' %}
 {% load static from staticfiles %}
 {% block content %}
-<div class="about2" >
+
 	<h1>This Blog Is Developed By:-</h1>
-	<img src="/static/developer.jpg" class="about">
-	<div class="about1">
+	
+
 		Hello I am Vikas and and i am currently pursuing my bachelors degree in Information Technology at Indian Institute Of Information Technology,Vadodara
-	</div>
+	
 	
 		<h1>For More Information You can text me here :-</h1>
 		<form class="site-form" method="POST" action="{% url 'feedback:about'%}">
@@ -22,5 +22,5 @@
 	<li><a href="https://www.facebook.com/profile.php?id=100005685854754">Facebook</a></li>
 	<li><a href="https://twitter.com/Vikassh89501557">Twitter</a></li>
 </ul>
-</div>
+
 {% endblock %}
