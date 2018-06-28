@@ -151,4 +151,10 @@ a.highlight{
     border-radius: 4px;
     margin: 10px 0;
 }
+div.about{
+    text-align: center;
 
+}
+div.about > a{
+    padding: 10px;
+}
