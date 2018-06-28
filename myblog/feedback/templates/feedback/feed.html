@@ -1,0 +1,13 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+
+<div>
+	<h1>Give Your Feedback</h1>
+</div>
+<form class="site-form" action="{% url 'feedback:feed'%}" method="POST">
+	{% csrf_token %}
+	{{form}}
+	<input type="submit" value="Submit">
+</form>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+<h1>Thanks for your feedback</h1>
+<hr>
+<h3>Here is The List Of some Feedback:-</h3>
+{% for x in data %}
+
+<ol>
+
+<strong>{{x.feed_back}}</strong>
+</ol>
+
+{% endfor %}
+{% endblock %}

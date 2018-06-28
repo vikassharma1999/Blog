@@ -1,0 +1,42 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Article</title>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+  </head>
+  <body>
+
+    <header class="wrapper">
+<h1><a href="{% url 'home' %}">Home</a></h1>
+</header>
+  <div class="wrapper">
+
+<nav>
+  <ul>
+    {% if user.is_authenticated%}
+    <li>
+      <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="highlight">Logout</button>
+      </form>
+    </li>
+
+    <li><a href="{% url 'feedback:feed' %}" class="highlight">Feedback</a></li>
+    <li><a href="{% url 'articles:create'%}" class="highlight">New Article</a></li>
+    <li><a href="{% url 'feedback:about'%}" class="highlight">About</a></li>
+    {% else %}
+    <li><a href="{% url 'accounts:login'%}" class="highlight">Login</a></li>
+    <li><a href="{% url 'accounts:signup'%}" class="highlight">Signup</a></li>
+   <li><a href="{% url 'feedback:about'%}" class="highlight">About</a></li>
+
+    {% endif %}
+  </ul>
+</nav>
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>
