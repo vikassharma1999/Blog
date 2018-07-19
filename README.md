@@ -1,2 +1,3 @@
 # Blog
-This is my first django website
+This is my first Django website
+
